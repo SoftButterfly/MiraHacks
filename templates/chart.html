@@ -1,0 +1,281 @@
+{% load staticfiles %}
+{% load staticfiles %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>HACKATON</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/materialize.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
+    </head>
+
+    <body>
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper blue-grey darken-3">
+                    <a href="http://www.miraflores.gob.pe/" class="brand-logo" style="color:#ef6c00">1° HACKATON MIRAFLORES</a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="sass.html"><i class="mdi-action-search left"></i>Holi</a></li>
+                        <li><a href="components.html"><i class="mdi-action-view-module right"></i>Link with Right Icon</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <main>
+            <div class="container">
+                <div class="row">
+                    <div class="col s12">
+                        <ul class="collapsible popout" data-collapsible="expandable">
+                            <li>
+                                <div class="collapsible-header active"></div>
+                                <div class="collapsible-body">
+                                    <div id="cod1">
+                                    asdfas
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header active"></div>
+                                <div class="collapsible-body">
+                                    <div id="cod2">
+                                    zsdvfas
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header active"></div>
+                                <div class="collapsible-body">
+                                    <div id="cod3">
+                                    </div>
+                                </div>
+                            </li>
+                         </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <script src="{% static 'js/jquery-1.11.3.min.js' %}" type="text/javascript"></script>
+        <script src="{% static 'js/materialize.js' %}" type="text/javascript"></script>
+        <script src="{% static 'js/highcharts.js' %}" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('#cod1').highcharts({
+                    chart: {
+                        type: 'column'
+                    },
+                    title: {
+                        text: 'Histograma de infracciones por tipo'
+                    },
+                    xAxis: {
+                        type: 'category'
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Número de infraciones'
+                        }
+                    },
+                    legend: {
+                        enabled: false
+                    },
+                    plotOptions: {
+                        series: {
+                            borderWidth: 0,
+                            dataLabels: {
+                                enabled: true,
+                                format: '{point.y:.0f}'
+                            }
+                        }
+                    },
+
+                    tooltip: {
+                        headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+                        pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.0f}</b> infracciones<br/>'
+                    },
+
+                    series: [{
+                        name: 'Infracciones',
+                        data: [
+                            ["Otros", 2],
+                            ["U07", 547],
+                            ["U11", 6],
+                            ["U10", 4],
+                            ["U15", 27],
+                            ["N67", 162],
+                            ["N48", 8],
+                            ["R15", 113],
+                            ["R12", 85],
+                            ["R13", 30],
+                            ["R10", 1],
+                            ["N60", 6],
+                            ["N40", 103],
+                            ["N42", 35],
+                            ["N45", 2],
+                            ["N44", 70],
+                            ["N69", 2],
+                            ["N22", 2],
+                            ["N01", 1245],
+                            ["N24", 415],
+                            ["N56A", 27],
+                            ["N66", 1],
+                            ["U08", 4],
+                            ["N63", 8],
+                            ["U04", 129],
+                            ["U01", 9],
+                            ["R01", 142],
+                            ["R02", 3],
+                            ["R05", 3],
+                            ["N71", 113],
+                            ["N34", 57],
+                            ["N53", 3],
+                            ["N50", 61],
+                            ["N61", 234],
+                            ["R23", 3],
+                            ["N37", 13]
+                        ]}
+                    ]
+                });
+
+                $('#cod2').highcharts({
+                    chart: {
+                        type: 'column'
+                    },
+                    title: {
+                        text: 'Histograma de infracciones por empresas infractoras'
+                    },
+                    xAxis: {
+                        type: 'category'
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Número de infraciones'
+                        }
+                    },
+                    legend: {
+                        enabled: false
+                    },
+                    plotOptions: {
+                        series: {
+                            borderWidth: 0,
+                            dataLabels: {
+                                enabled: true,
+                                format: '{point.y:.0f}'
+                            }
+                        }
+                    },
+
+                    tooltip: {
+                        headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+                        pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.0f}</b> infracciones<br/>'
+                    },
+
+                    series: [{
+                        name: 'Infracciones',
+                        data: [
+                            //["Otros", 2593],
+                            ["ET. EL PROGRESO", 12],
+                            ["CONSORCIO TRANSCASTEL", 4],
+                            ["ETMIMSA", 26],
+                            ["ETSEMURV", 4],
+                            ["STAR TOURS", 11],
+                            ["CUARENTA INTEGRADA", 1],
+                            ["EMTESSA", 70],
+                            ["ETS. AMIGSA", 1],
+                            ["URANO TOURS  SA.", 77],
+                            ["ET. NUEVA AMERICA", 2],
+                            ["RAPIDO UNIVERSAL", 2],
+                            ["ATRAPERSAC", 1],
+                            ["DOCE DE NOVIEMBRE", 1],
+                            ["ETEPSA", 14],
+                            ["ET. SANTA CATALINA", 5],
+                            ["GRUPO ORION", 211],
+                            ["CONSORCIO CIELO AZUL", 1],
+                            ["E.T. 104", 4],
+                            ["ATRASCSA", 1],
+                            ["SAGRADO CORAZON", 1],
+                            ["TRASLIMA S.A.", 1],
+                            ["VIRGEN DE COPACABANA", 165],
+                            ["ET. GUADULFO SILVA C.", 7],
+                            ["FOCAM S.A", 5],
+                            ["E.T 25 DE SETIEMBRE", 9],
+                            ["ETSIRSA", 2],
+                            ["ET. TRANSLIMA", 57],
+                            ["GRUPLAN SA.", 8],
+                            ["ETUSA", 2],
+                            ["ETRASCPSA", 4],
+                            ["ET. GRUPO DIEZ", 2],
+                            ["TRANSNASA", 3],
+                            ["ET. NUEVO PERU", 1],
+                            ["ET. ANGAMOS", 30],
+                            ["ET. REAL DE VILLA", 6],
+                            ["ET.SEMURV", 1],
+                            ["CILAP", 7],
+                            ["STA. ISABEL DE VILLA", 3],
+                            ["TRUSAC", 1],
+                            ["ALMIRANTE MIGUEL GRAU", 1],
+                            ["MU\u00d1ANTE CARDENAS", 1],
+                            ["LUBARSA", 1],
+                            ["ROMA INTERNACIONAL", 5],
+                            ["ETSEMURV SAC.", 1],
+                            ["ET.NASSAC S.A", 13],
+                            ["MONTERRICO", 7],
+                            ["SANTA CRUZ SA.", 4],
+                            ["SEMURV", 1],
+                            ["NORLIMA", 1],
+                            ["STO. CRISTO DE PACHACAMILLA", 4],
+                            ["ETSEMURU SAC", 1],
+                            ["GT. CARMELITAS", 1],
+                            ["SEMURD", 1],
+                            ["LOS ANGELES DEL PERU", 6],
+                            ["CONSORCIO CIMA BUS SA.", 1],
+                            ["HOGAR TOURS SAC", 6],
+                            ["ATCR S.A.", 40],
+                            ["ETERSAC", 12],
+                            ["ETRANCISA", 6],
+                            ["ET. PATRON SAN SEBASTIAN", 1],
+                            ["ET. NORTEAMERICA", 7],
+                            ["ATRASCPSA", 1],
+                            ["SESOSA", 3],
+                            ["ESTSACASA", 2],
+                            ["ETEUSA", 1],
+                            ["ET. SAN ANTONIO SA.", 5],
+                            ["ET. UNIDOS CHAMA", 39],
+                            ["TRANSPORTES HUASCAR", 2],
+                            ["ET. SAN IGNACIO", 5],
+                            ["EDILBERTO RAMOS SAC", 13],
+                            ["ET. TABLADA 2000", 9],
+                            ["ET. EL PORVENIR", 1],
+                            ["GTMIMSA", 1],
+                            ["ET. AQUARIUS EXPRESS", 8],
+                            ["TRANSVESA", 8],
+                            ["ET. EXPRESS PACHACAMAC", 9],
+                            ["ET. SAG INGACIO", 1],
+                            ["GRUPO SALAMANCA", 12],
+                            ["LOS LAURELES", 1],
+                            ["ET. SERV. URBANOS", 5],
+                            ["ETUNIJESA SAC", 9],
+                            ["ET. NUEVO HORIZONTE", 3],
+                            ["ESPECIAL SOLIDARIDAD", 47],
+                            ["ETSISA", 1],
+                            ["ET. ROOSEVELT SA.", 1],
+                            ["ET. NUEVA ESTRELLA", 1],
+                            ["ETSAMIGSA", 2],
+                            ["EMTRATASAC", 1],
+                            ["ETRAPERSA", 4],
+                            ["ET-40 INTEGRADA", 1],
+                            ["STA. ROSA JICAMARCA", 2]
+                        ]}
+                    ]
+                });
+
+
+
+
+
+                $('.slider').slider({full_width: true});
+            });
+        </script>
+    </body>
+</html>

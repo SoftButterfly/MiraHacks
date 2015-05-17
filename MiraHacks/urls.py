@@ -15,8 +15,15 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.contrib.staticfiles import views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api/', include('api.urls')),
+    url(r'^chart/$', 'MiraHacks.views.chart', name='chart'),
+    url(r'^$', 'MiraHacks.views.home', name='home'),
+]
+
+urlpatterns += [
+    url(r'^static/(?P<path>).*$', views.serve),
 ]
